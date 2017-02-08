@@ -11,4 +11,14 @@ int factorial(int num)
 	return product;
 }
 
+
+int recursiveFactorial(int x)
+{
+	if (x == 0)
+		return 1;
+	
+	else
+		return x * recursiveFactorial(x - 1);
+}
+
 #endif
