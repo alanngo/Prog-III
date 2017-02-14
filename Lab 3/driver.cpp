@@ -9,16 +9,16 @@ int testRun( int );
 // Main Function
 int main()
 {
-	// Test 10,000,000 trial runs
+	// Test 10 Million trial runs
 	testRun(10000000);
 
-	// Test 100,000,000 trial runs
+	// Test 100 Million trial runs
 	testRun(100000000);
 
-	// Test 300,000,000 trial runs
+	// Test 300 Million trial runs
 	testRun(300000000);
 
-	// Test 1,000,000,000 trial runs
+	// Test 1 Billion trial runs
 	testRun(1000000000);
 
 	return 0;
