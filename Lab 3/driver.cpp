@@ -27,37 +27,37 @@ int main()
 // Test Function
 int testRun(int num)
 {
-		clock_t start;
-		double duration, duration2;
-		int fact,
-		    trialRuns = num;
+	clock_t start;
+	double duration, duration2;
+	int fact,
+		  trialRuns = num;
 
-    // We take the factorial of 12 to be our constant as 12! is the highest
-		// limit the `int` data type can accept. Any number higher will cause
-		// memory overflow issues
-		int n = 12;
+  // We take the factorial of 12 to be our constant as 12! is the highest
+	// limit the `int` data type can accept. Any number higher will cause
+	// memory overflow issues
+	int n = 12;
 
-		// Test Iterative Solution
-		start = clock();
+	// Test Iterative Solution
+	start = clock();
 
-		for (int i = 0; i < trialRuns; i++)
-		{
-			fact = factorial(n);
-		}
-		duration = (clock() - double(start)) / CLOCKS_PER_SEC;
+	for (int i = 0; i < trialRuns; i++)
+	{
+		fact = factorial(n);
+	}
+	duration = (clock() - double(start)) / CLOCKS_PER_SEC;
 
-		// Test Recursive Solution
-		start = clock();
+	// Test Recursive Solution
+	start = clock();
 
-		for (int i = 0; i < trialRuns; i++)
-		{
-			fact = recursiveFactorial(n);
-		}
-		duration2 = (clock() - double(start)) / CLOCKS_PER_SEC;
+	for (int i = 0; i < trialRuns; i++)
+	{
+		fact = recursiveFactorial(n);
+	}
+	duration2 = (clock() - double(start)) / CLOCKS_PER_SEC;
 
-		// Display Timing Results
-		cout << endl << "Trial Runs: " << trialRuns << endl << endl;
-		cout << "ITERATIVE SOLUTION: " << duration << " secs" << endl;
-		cout << "RECURSIVE SOLUTION: " << duration2 << " secs" << endl;
-		return 0;
+	// Display Timing Results
+	cout << endl << "Trial Runs: " << trialRuns << endl << endl;
+	cout << "ITERATIVE SOLUTION: " << duration << " secs" << endl;
+	cout << "RECURSIVE SOLUTION: " << duration2 << " secs" << endl;
+	return 0;
 }
