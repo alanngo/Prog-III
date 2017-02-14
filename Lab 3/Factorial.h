@@ -3,9 +3,9 @@
 
 // Iterative Factorial Function
 // Written by: Alex B
-int factorial(int num)
+long long int factorial(int num)
 {
-	int product = 1;
+	long long int product = 1;
 	for (int i = 1; i <= num; i++)
 	{
 		product *= i;
@@ -15,7 +15,7 @@ int factorial(int num)
 
 // Recursive Factorial Function
 // Written by: Alan N
-int recursiveFactorial(int x)
+long long int recursiveFactorial(int x)
 {
 	if (x == 0)
 		return 1;
