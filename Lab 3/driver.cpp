@@ -1,6 +1,6 @@
 #include <ctime>
 #include <iostream>
-#include "Factorial.h"
+#include "Functions.h"
 using namespace std;
 
 // testRun Prototype
@@ -40,7 +40,7 @@ void testRun(long long int num)
 		 Final Case: 20! - highest factorial test before encountering memory overflow
 		                   issues. at trial runs <= 100 Million both solutions have
 											 little time descrepancy. at > 300 Million the recursive
-											 solution perform more efficient that iterative
+											 solution perform more efficient than the iterative.
 	*/
 	int n = 12;
 
