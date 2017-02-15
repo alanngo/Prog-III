@@ -19,7 +19,7 @@ int main()
 	testRun(300000000);
 
 	// Test 1 Billion trial runs
-	//testRun(1000000000);
+	testRun(1000000000);
 
 	return 0;
 }
@@ -30,11 +30,18 @@ void testRun(long long int num)
 	clock_t start;
 	double duration, duration2;
 	long long int fact,
-		   trialRuns = num;
+		       trialRuns = num;
 
-    // We take the factorial of 12 to be our constant as 12! is the highest
-	// limit the `int` data type can accept. Any number higher will cause
-	// memory overflow issues
+  /* Base Case: 12! - iterative solution clearly more efficient
+
+		 Middle Case: 18! - both solutions begin to preform relatively equal
+		                    there is less descrepancy between the times
+
+		 Final Case: 20! - highest factorial test before encountering memory overflow
+		                   issues. at trial runs <= 100 Million both solutions have
+											 little time descrepancy. at > 300 Million the recursive
+											 solution perform more efficient that iterative
+	*/
 	int n = 12;
 
 	// Test Iterative Solution
