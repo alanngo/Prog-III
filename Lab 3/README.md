@@ -9,8 +9,10 @@ As we move through each trial run we will test 3 factorial cases.
 First Case: 12!
          - Through each trial run the iterative solution performs more efficiently
            than it's recursive counterpart.
+
 Second Case: 18!
          - Both solutions begin to perform almost equal and there is minimal time discrepancy.
+
 Third Case: 20!
          -  Highest test case before memory overflow issues begin. At trial runs
             <= 100 million both functions have little time discrepancy. At > 300
