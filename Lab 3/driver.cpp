@@ -19,7 +19,7 @@ int main()
 	testRun(300000000);
 
 	// Test 1 Billion trial runs
-	testRun(1000000000);
+	//testRun(1000000000);
 
 	return 0;
 }
@@ -30,9 +30,9 @@ void testRun(long long int num)
 	clock_t start;
 	double duration, duration2;
 	long long int fact,
-		trialRuns = num;
+		   trialRuns = num;
 
-  // We take the factorial of 12 to be our constant as 12! is the highest
+    // We take the factorial of 12 to be our constant as 12! is the highest
 	// limit the `int` data type can accept. Any number higher will cause
 	// memory overflow issues
 	int n = 12;
@@ -59,4 +59,5 @@ void testRun(long long int num)
 	cout << endl << "Trial Runs: " << trialRuns << endl << endl;
 	cout << "ITERATIVE SOLUTION: " << duration << " secs" << endl;
 	cout << "RECURSIVE SOLUTION: " << duration2 << " secs" << endl;
+	cout << "-----------------------------------" << endl << endl;
 }
