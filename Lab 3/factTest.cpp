@@ -18,8 +18,8 @@ int main()
 	// Test 300 Million trial runs
 	testRun(300000000);
 
-	// Test 1 Billion trial runs
-	testRun(1000000000);
+	// Test 500 Million trial runs
+	testRun(500000000);
 
 	return 0;
 }
@@ -32,16 +32,6 @@ void testRun(long long int num)
 	long long int fact,
 		      trialRuns = num;
 
-  /* Base Case: 12! - iterative solution clearly more efficient
-
-		 Middle Case: 18! - both solutions begin to preform relatively equal
-		                    there is less descrepancy between the times
-
-		 Final Case: 20! - highest factorial test before encountering memory overflow
-		                   issues. at trial runs <= 100 Million both solutions have
-											 little time descrepancy. at > 300 Million the recursive
-											 solution performs more efficient.
-	*/
 	int n = 12;
 
 	// Test Iterative Solution
