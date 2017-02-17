@@ -5,34 +5,34 @@ using namespace std;
 
 int main()
 {
-  double num, num2;
 
-  // Lets test 12^4
-  num = power(12, 4);
-  num2 = pow(12, 4);
+  double num,
+         answer,
+         answer2;
 
-  cout << "Testing 12^4" << endl << endl;
-  cout << "power() function: " << num << endl;
-  cout << "pow()   function: " << num2 << endl << endl;
-  cout << "-----------------------" << endl << endl;
+  int num2;
+  char cont = 'y';
 
-  // Let's test 5^2
-  num = power(5, 2);
-  num2 = pow(5, 2);
+  while (!(cont == 'n'))
+  {
+  	cout << "Enter Base: ";
+  	cin >> num;
+  	cout << "Enter Exponent: ";
+  	cin >> num2;
+  	cout << endl;
 
-  cout << "Testing 5^2" << endl << endl;
-  cout << "power() function: " << num << endl;
-  cout << "pow()   function: " << num2 << endl << endl;
-  cout << "-----------------------" << endl << endl;
+  	answer = power(num, num2);
+  	answer2 = pow(num, num2);
 
-  // Let's test 9^3
-  num = power(9, 3);
-  num2 = pow(9, 3);
+  	cout << "Testing " << num << "^" << num2 << endl << endl;
+  	cout << "power() function: " << answer << endl;
+  	cout << "pow()   function: " << answer2 << endl << endl;
+  	cout << "-----------------------" << endl << endl;
 
-  cout << "Testing 9^3" << endl << endl;
-  cout << "power() function: " << num << endl;
-  cout << "pow()   function: " << num2 << endl << endl;
-  cout << "-----------------------" << endl << endl;
+  	cout << "Continue with another test (y/n): ";
+  	cin >> cont;
+  	cout << endl << endl;
+  }
 
   return 0;
 }
