@@ -13,15 +13,26 @@ int main()
   int num2;
   char cont = 'y';
 
-  while (!(cont == 'n'))
+  while (!(cont == 'n' || cont == 'N'))
   {
   	cout << "Enter Base: ";
-  	cin >> num;
-  	cout << "Enter Exponent: ";
-  	cin >> num2;
-  	cout << endl;
+  	if (cin >> num)
+      cout << "Enter Exponent: ";
 
-  	answer = power(num, num2);
+      if (cin >> num2)
+  	   cout << endl;
+      else
+      {
+        cout << "Invalid input, please try again" << endl << endl;
+        continue;
+      }
+
+    else
+    {
+      cout << "Invalid input, please try again" << endl << endl;
+      continue;
+    }
+    answer = power(num, num2);
   	answer2 = pow(num, num2);
 
   	cout << "Testing " << num << "^" << num2 << endl << endl;
