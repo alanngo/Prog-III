@@ -1,4 +1,4 @@
-#ifndef FUNCTIONS
+#ifndef FUNCTIONS_
 #define FUNCTIONS_
 
 // Iterative Factorial Function
@@ -30,10 +30,12 @@ double power( double a, int n)
 {
 	if (n == 0)
 		return 1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> de168b3156a32591a1c79d686ea1668e216dcbbe
 	else
 		return a * power(a, n-1);
 }
-
 
 #endif
