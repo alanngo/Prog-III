@@ -18,6 +18,7 @@ int main()
   ArrayStack<int> stack;
   string postfix;
   int num, op1, op2;
+  bool error;
 
   cout << "Enter Postfix Expression: " << endl;
   getline(cin, postfix);
@@ -26,13 +27,20 @@ int main()
   {
     if (postfix[i] == ' ')
       continue;
-
+	
     else if (isDigit(postfix[i]))
     {
       num = (postfix[i] - 48);
       stack.push(num);
     }
-
+	
+	else if (!(isOperator(postfix[i])))
+	{
+		cout << postfix[i] << " is an invalid expression" << endl;
+		error = true;
+	}
+	
+	
     else if (isOperator(postfix[i]))
     {
       op1 = stack.peek();
@@ -42,15 +50,12 @@ int main()
 
       stack.push(performCalculation(op1, op2, postfix[i]));
     }
-
-    else if (!isOperator(postfix[i]))
-    {
-      break;
-      cout << "Invalid Character Detected" << endl;
-    }
-
+	
   }
-  cout << "Value: " << stack.peek() << endl;
+  
+  if (!error)
+  	cout << "Value: " << stack.peek() << endl;
+  
   return 0;
 }
 
@@ -69,6 +74,7 @@ bool isDigit(char ch)
 {
   if (ch >= '0' && ch <= '9')
     return true;
+  
   else
     return false;
 }
@@ -84,14 +90,15 @@ int performCalculation(int num1, int num2, char op)
       answer = num2 + num1;
       break;
     case '-':
-      answer = num2 + num1;
+      answer = num2 - num1;
       break;
     case '*':
-      answer = num2 + num1;
+      answer = num2 * num1;
       break;
     case '/':
-      answer = num2 + num1;
+      answer = num2 / num1;
       break;
   }
+  
   return answer;
 }

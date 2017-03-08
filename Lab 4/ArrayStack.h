@@ -25,6 +25,7 @@ public:
 	 bool push(const ItemType& newEntry);
 	 bool pop();
 	 ItemType peek() const;
+	 bool len() const;
 }; // end ArrayStack
 
 /** Listing 7-1
@@ -82,6 +83,7 @@ ItemType ArrayStack<ItemType>::peek() const
 	// Stack is not empty; return top
 	return items[top];
 }  // end peek
+
 // End of implementation file.
 
 #endif
