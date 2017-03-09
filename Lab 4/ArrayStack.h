@@ -1,10 +1,3 @@
-//� Created by Frank M. Carrano and Timothy M. Henry.
-//� Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
-
-/** ADT stack: Array-based implementation.
- Listing 7-1
- @file ArrayStack.h */
-
 #ifndef ARRAY_STACK_
 #define ARRAY_STACK_
 
@@ -31,7 +24,7 @@ public:
 /** Listing 7-1
     @file ArrayStack.cpp */
 
-#include <cassert>       // For assert
+#include <stdexcept>
 
 template<class ItemType>
 ArrayStack<ItemType>::ArrayStack() : top(-1)
@@ -78,10 +71,11 @@ bool ArrayStack<ItemType>::pop()
 template<class ItemType>
 ItemType ArrayStack<ItemType>::peek() const
 {
-	assert(!isEmpty());  // Enforce precondition
-
-	// Stack is not empty; return top
-	return items[top];
+	if (isEmpty())
+		throw std::runtime_error("Malformed Expression");
+	else
+	    // Stack is not empty; return top
+		return items[top];
 }  // end peek
 
 // End of implementation file.
