@@ -24,6 +24,8 @@ public:
   void clear();
   ItemType getEntry(int position) const;
   void replace(int position, const ItemType& newEntry);
+  int getPosition(const ItemType& entry) const;
+  int remove(const ItemType& entry);
 }; // end ArrayList
 
 /** Implementation for class ArrayList */
@@ -108,6 +110,36 @@ void ArrayList<ItemType>::clear()
 {
   itemCount = 0;
 } // end clear
+
+template<class ItemType>
+int ArrayList<ItemType>::getPosition(const ItemType& entry) const
+{
+	int position;
+	assert (!isEmpty());
+
+	for (int pos = 1; pos <= itemCount; pos++)
+	{
+		if (items[pos] == entry)
+			position = pos;
+	} // end for
+	return position;
+} // end getPosition 
+
+template<class ItemType>
+int ArrayList<ItemType>::remove(const ItemType& entry)
+{
+	int deleted = 0;
+	int pos = getPosition(entry);
+	bool success = remove(pos);
+
+	while (success)
+	{
+		deleted++;
+		pos = getPosition(entry);
+		success = remove(pos);
+	}
+	return deleted;
+} // end remove
 // End of Implementation
 
 #endif

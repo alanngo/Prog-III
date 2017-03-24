@@ -15,7 +15,7 @@ void displayList(ListInterface<string>* listPtr)
 
 void listTester(ListInterface<string>* listPtr)
 {
-   string data[] = {"one", "two", "three", "four", "five", "six"};
+   string data[] = {"ten", "ten", "one", "ten", "two", "ten"};
    cout << "isEmpty: returns " << listPtr->isEmpty() << "; should be 1 (true)" << endl;
    for (int i = 0; i < 6; i++)
    {
@@ -28,21 +28,20 @@ void listTester(ListInterface<string>* listPtr)
    displayList(listPtr);
 
    cout << "isEmpty: returns " << listPtr->isEmpty() << "; should be 0 (false)" << endl;
-   cout << "getLength returns : " << listPtr->getLength() << "; should be 5" << endl;
+   //cout << "getLength returns : " << listPtr->getLength() << "; should be 5" << endl;
 
-   cout << "The entry at position 4 is " << listPtr->getEntry(4) << "; should be four" << endl;
-   cout << "After replacing the entry at position 3 with XXX: ";
-   listPtr->replace(3, "XXX");
-   displayList(listPtr);
+   //cout << "The entry at position 4 is " << listPtr->getEntry(4) << "; should be four" << endl;
+   //cout << "After replacing the entry at position 3 with XXX: ";
+   //listPtr->replace(3, "XXX");
+  // displayList(listPtr);
 
-   cout << "remove(2): returns " << listPtr->remove(2) << "; should be 1 (true)" << endl;
-   cout << "remove(1): returns " << listPtr->remove(1) << "; should be 1 (true)" << endl;
-   cout << "remove(6): returns " << listPtr->remove(6) << "; should be 0 (false)" << endl;
-   displayList(listPtr);
+  // cout << "remove(2): returns " << listPtr->remove(2) << "; should be 1 (true)" << endl;
+  // cout << "remove(1): returns " << listPtr->remove(1) << "; should be 1 (true)" << endl;
+  // cout << "remove(6): returns " << listPtr->remove(6) << "; should be 0 (false)" << endl;
+  // displayList(listPtr);
 
-   cout << "clear: " << endl;
-   listPtr->clear();
-   cout << "isEmpty: returns " << listPtr->isEmpty() << "; should be 1 (true)" << endl;
+   cout << "getPosition(one): " << listPtr->getPosition("one") << "; should be 3" << endl;
+   cout << "getPosition(two): " << listPtr->getPosition("two") << "; should be 5" << endl;
 
 // try illegal getEntry
 //   cout << "Attempt an illegal retrieval from position 6: " << endl;
@@ -51,6 +50,13 @@ void listTester(ListInterface<string>* listPtr)
 // try illegal
 //   cout << "Attempt an illegal replacement at position 6: " << endl;
 //   listPtr->replace(6, "YYY");
+   cout << "Remove all ones from the list " << endl;
+   cout << "remove(ten): returns " << listPtr->remove("ten") << "; should be 4 for 4 entries removed" << endl;
+   displayList(listPtr);
+   
+   cout << "clear: " << endl;
+   listPtr->clear();
+   cout << "isEmpty: returns " << listPtr->isEmpty() << "; should be 1 (true)" << endl;
    
 } // end listTester
 

@@ -50,9 +50,23 @@ public:
    @param newEntry  The replacement entry.
    @return  The replaced entry. */
   virtual void replace(int position, const ItemType& newEntry) = 0;
+  
+  /** Gets the position of a given entry in this list.
+   @pre  isEmpty() != true
+   @post  The position of the entry will be returned.
+   @param entry  The item in the list whose position you want returned.
+   @return  The posiition index if found, or zero if not. */
+  virtual int getPosition(const ItemType& entry) const = 0;
+  
+  /** Removes an entry from all positions in a list.
+   @pre  getPosition(entry) != 0 && isEmpty() != true
+   @post  The number of entries removed will be returned
+   @param entry  The item in the list to remove.
+   @return  The number of entries removed from the list. */
+  virtual int remove(const ItemType& entry) = 0;
 
-  /** Destroys this list and frees its assigned memory.
-  virtual ~ListInterface() { } */
+  /** Destroys this list and frees its assigned memory. */
+  virtual ~ListInterface() { };
 }; // end ListInterface
 
 #endif
