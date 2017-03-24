@@ -28,15 +28,17 @@ public:
 
 /** Implementation for class ArrayList */
 
-template<class Itemtype>
-ArrayList<ItemType>::ArrayList() : itemsCount(0), maxItems(DEFAULT_CAPACITY)
+template<class ItemType>
+ArrayList<ItemType>::ArrayList() 
 {
+	itemCount = 0;
+	maxItems = DEFAULT_CAPACITY;
 } // end default constructor
 
 template<class ItemType>
 bool ArrayList<ItemType>::isEmpty() const
 {
-  return itemCount = 0;
+  return itemCount == 0;
 } // end isEmpty
 
 template<class ItemType>
