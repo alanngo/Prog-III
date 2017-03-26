@@ -10,12 +10,12 @@ void displayList(ListInterface<string>* listPtr)
    {
          cout << listPtr->getEntry(pos) << " ";
    } // end for
-   cout << endl;
+   cout << endl << endl;
 }  // end displayList
 
 void listTester(ListInterface<string>* listPtr)
 {
-   string data[] = {"ten", "ten", "one", "ten", "two", "ten"};
+   string data[] = {"duck", "duck", "eagle", "duck", "falcon", "goose"};
    cout << "isEmpty: returns " << listPtr->isEmpty() << "; should be 1 (true)" << endl;
    for (int i = 0; i < 6; i++)
    {
@@ -24,34 +24,16 @@ void listTester(ListInterface<string>* listPtr)
       else
          cout << "Cannot insert " << data[i] << " at position " << (i + 1) << endl;
    }  // end for
-
+   cout << endl;
    displayList(listPtr);
+   
+   cout << "---------------------------" << endl << endl;
+   cout << "getPosition('falcon'): " << listPtr->getPosition("falcon") << "; should be 5" << endl;
+   cout << "getPosition('eagle'): " << listPtr->getPosition("eagle") << "; should be 3" << endl << endl;
 
-   cout << "isEmpty: returns " << listPtr->isEmpty() << "; should be 0 (false)" << endl;
-   //cout << "getLength returns : " << listPtr->getLength() << "; should be 5" << endl;
 
-   //cout << "The entry at position 4 is " << listPtr->getEntry(4) << "; should be four" << endl;
-   //cout << "After replacing the entry at position 3 with XXX: ";
-   //listPtr->replace(3, "XXX");
-  // displayList(listPtr);
-
-  // cout << "remove(2): returns " << listPtr->remove(2) << "; should be 1 (true)" << endl;
-  // cout << "remove(1): returns " << listPtr->remove(1) << "; should be 1 (true)" << endl;
-  // cout << "remove(6): returns " << listPtr->remove(6) << "; should be 0 (false)" << endl;
-  // displayList(listPtr);
-
-   cout << "getPosition(one): " << listPtr->getPosition("one") << "; should be 3" << endl;
-   cout << "getPosition(two): " << listPtr->getPosition("two") << "; should be 5" << endl;
-
-// try illegal getEntry
-//   cout << "Attempt an illegal retrieval from position 6: " << endl;
-//   listPtr->getEntry(6);
-
-// try illegal
-//   cout << "Attempt an illegal replacement at position 6: " << endl;
-//   listPtr->replace(6, "YYY");
-   cout << "Remove all ones from the list " << endl;
-   cout << "remove(ten): returns " << listPtr->remove("ten") << "; should be 4 for 4 entries removed" << endl;
+   cout << "Remove every 'duck' from the list " << endl;
+   cout << "remove('duck'): returns " << listPtr->remove("duck") << "; should be 3 for 3 entries removed" << endl << endl;
    displayList(listPtr);
    
    cout << "clear: " << endl;
@@ -64,6 +46,7 @@ int main()
 {
 	ListInterface<string>* listPtr = new ArrayList<string>();
 	cout << "Testing the Array-Based List:" << endl;
+	cout << "------------------------------" << endl;
 	listTester(listPtr);
    return 0;
 }  // end main
