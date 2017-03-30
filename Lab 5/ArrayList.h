@@ -31,7 +31,7 @@ public:
 /** Implementation for class ArrayList */
 
 template<class ItemType>
-ArrayList<ItemType>::ArrayList() 
+ArrayList<ItemType>::ArrayList()
 {
 	itemCount = 0;
 	maxItems = DEFAULT_CAPACITY;
@@ -123,7 +123,7 @@ int ArrayList<ItemType>::getPosition(const ItemType& entry) const
 			position = pos;
 	} // end for
 	return position;
-} // end getPosition 
+} // end getPosition
 
 template<class ItemType>
 int ArrayList<ItemType>::remove(const ItemType& entry)
@@ -136,6 +136,10 @@ int ArrayList<ItemType>::remove(const ItemType& entry)
 	{
 		deleted++;
 		pos = getPosition(entry);
+    if (items[pos] != entry)
+    {
+      break;
+    }
 		success = remove(pos);
 	}
 	return deleted;
